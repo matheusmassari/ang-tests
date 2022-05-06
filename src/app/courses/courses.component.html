@@ -1,6 +1,73 @@
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 <ul>
-    <li *ngFor="let course of courses" >
-        {{course}}
+    <li *ngFor="let course of courses">
+        {{ course }}
     </li>
 </ul>
+
+<div style="display: flex; flex-direction: column; max-width: 500px">
+    <label for="qualquer">Input qualquer: </label>
+    <input
+        (keyup.enter)="onKeyUp($event)"
+        type="text"
+        style="margin-bottom: 1rem"
+        id="qualquer"
+    />
+
+    <label for="email">Email: </label>
+    <input
+        #email
+        (keyup.enter)="onEmailEnter(email.value)"
+        type="text"
+        style="margin-bottom: 1rem"
+        id="email"
+    />
+
+    <label for="email2">Email: (two-way binding)</label>
+    <input
+        [(ngModel)]="mail2"
+        (keyup.enter)="onEmailEnter2()"
+        type="text"
+        style="margin-bottom: 1rem"
+        id="email2"
+    />
+</div>
+
+<div>
+    <h2>Course info:</h2>
+    <p>
+        {{ course.title | uppercase }}
+    </p>
+    <p>
+        {{ course.students | number }}
+    </p>
+    <p>
+        {{ course.rating | number: "1.2-2" }}
+    </p>
+    <p>
+        {{ course.price | currency: "BRL":true:"3.2-2" }}
+    </p>
+    <p>
+        {{ course.releaseDate | date: "shortDate" }}
+    </p>
+    <p>Description: {{ text | summary: 10 }}</p>
+</div>
+
+<div (click)="onDivClick()" style="background-color: wheat">
+    <button
+        (click)="onBtnClick($event)"
+        class="btn btn-primary"
+        [class.active]="isActive"
+    >
+        Click
+    </button>
+</div>
+
+<span
+    class="bi"
+    style="font-size: 3rem"
+    (click)="toggleStar()"
+    [class.bi-star-fill]="isFavorite"
+    [class.bi-star]="!isFavorite"
+>
+</span>
