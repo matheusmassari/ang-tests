@@ -1,3 +1,7 @@
-<h1>Angular</h1>
-<app-courses></app-courses>
+<app-favorites
+    style="display: block;"
+    [isFavorite]="post.isFavorite"
+    (change)="onFavoritesChange()"
+></app-favorites>
+<app-likes [isLiked]="tweet.isLiked" ></app-likes>
 <router-outlet></router-outlet>

@@ -9,15 +9,14 @@ import { CoursesService } from './courses.service';
 export class CoursesComponent implements OnInit {
     title = 'List of courses';
     courses;
-    isFavorite: boolean = false
     text =
         'Mussum Ipsum, cacilds vidis litro abertis. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Per aumento de cachacis, eu reclamis. Paisis, filhis, espiritis santis. Cevadis im ampola pa arma uma pindureta.';
 
     isActive = false;
     mail = 'exemplo@gmail.com';
     mail2 = 'exeplo2@gmail.com';
-    placeholderMail = 'zedocaixaum@vai.com';
-    starClass = "bi bi-star"
+
+    
 
     course = {
         title: 'O curso completo de Angular',
@@ -57,7 +56,6 @@ export class CoursesComponent implements OnInit {
     getTitle() {
         return this.title;
     }
-
     
-    toggleStar = () => this.isFavorite = !this.isFavorite
+    
 }

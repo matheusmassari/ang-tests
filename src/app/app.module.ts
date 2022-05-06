@@ -8,6 +8,11 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CoursesService } from './courses/courses.service';
+import { TitleCasePipe } from './title-case.pipe';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { TitleCaseInputComponent } from './title-case-input/title-case-input.component';
+import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
+import { LikesComponent } from './likes/likes.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +20,11 @@ import { CoursesService } from './courses/courses.service';
         CourseComponent,
         CoursesComponent,
         SummaryPipe,
+        TitleCasePipe,
+        FavoritesComponent,
+        TitleCaseInputComponent,
+        BootstrapPanelComponent,
+        LikesComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, FormsModule],
     providers: [CoursesService],

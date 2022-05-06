@@ -1,0 +1,12 @@
+<div class="d-flex flex-row align-items-center">
+    <i
+        class="bi"
+        [class.bi-suit-heart]="!isLiked"
+        [class.bi-suit-heart-fill]="isLiked"
+        (click)="toggleLike()"
+        style="font-size: 3rem"
+    ></i>
+    <p>
+        {{numberOfLikes}}
+    </p>
+</div>
