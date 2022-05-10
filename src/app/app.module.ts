@@ -13,6 +13,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { TitleCaseInputComponent } from './title-case-input/title-case-input.component';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { LikesComponent } from './likes/likes.component';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { LikesComponent } from './likes/likes.component';
         TitleCaseInputComponent,
         BootstrapPanelComponent,
         LikesComponent,
+        ZippyComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, FormsModule],
     providers: [CoursesService],
