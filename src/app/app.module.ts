@@ -14,6 +14,8 @@ import { TitleCaseInputComponent } from './title-case-input/title-case-input.com
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { LikesComponent } from './likes/likes.component';
 import { ZippyComponent } from './zippy/zippy.component';
+import { NgSwitchComponentComponent } from './ng-switch-component/ng-switch-component.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +29,8 @@ import { ZippyComponent } from './zippy/zippy.component';
         BootstrapPanelComponent,
         LikesComponent,
         ZippyComponent,
+        NgSwitchComponentComponent,
+        ContactFormComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, FormsModule],
     providers: [CoursesService],
