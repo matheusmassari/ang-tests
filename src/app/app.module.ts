@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,8 @@ import { LikesComponent } from './likes/likes.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { NgSwitchComponentComponent } from './ng-switch-component/ng-switch-component.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
+import { ArrayFormComponent } from './array-form/array-form.component';
 
 @NgModule({
     declarations: [
@@ -31,8 +33,15 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
         ZippyComponent,
         NgSwitchComponentComponent,
         ContactFormComponent,
+        SignUpFormComponent,
+        ArrayFormComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, FormsModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+    ],
     providers: [CoursesService],
     bootstrap: [AppComponent],
 })

@@ -1,0 +1,17 @@
+<form class="mx-auto">
+    <input type="text" class="form-control" #topic />
+    <button class="btn btn-primary" (click)="addTopic(topic)">Add Topic</button>
+    <div class="container">
+        <ul class="list-group">
+            <li
+                *ngFor="let topic of formTopics.controls"
+                class="list-group-item"
+            >
+                <p>
+                    {{ topic.value }}
+                </p>
+                <span (click)="removeTopic(topic)" class="bi bi-x"></span>
+            </li>
+        </ul>
+    </div>
+</form>
