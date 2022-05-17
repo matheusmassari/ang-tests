@@ -1,17 +1,37 @@
 <form class="mx-auto">
+    <h2 style="text-align: center">{{ title }}</h2>
     <input type="text" class="form-control" #topic />
-    <button class="btn btn-primary" (click)="addTopic(topic)">Add Topic</button>
-    <div class="container">
-        <ul class="list-group">
-            <li
-                *ngFor="let topic of formTopics.controls"
-                class="list-group-item"
-            >
-                <p>
-                    {{ topic.value }}
-                </p>
-                <span (click)="removeTopic(topic)" class="bi bi-x"></span>
-            </li>
-        </ul>
+    <button class="btn btn-primary" (click)="addTopic(topic)">
+        Adicionar Atividade
+    </button>
+    <div class="painel-todos">
+        <div class="container todo-child">
+            <h5>Incompletos</h5>
+            <ol class="list-group">
+                <li
+                    *ngFor="let topic of formTopics.controls"
+                    class="list-group-item"
+                >
+                    <p>
+                        {{ topic.value }}
+                    </p>
+                    <span (click)="removeTopic(topic)" class="bi bi-x"></span>
+                </li>
+            </ol>
+        </div>
+        <div class="container todo-child">
+            <h5>Completos</h5>
+            <ol class="list-group">
+                <li
+                    *ngFor="let tarefa of formIncompletos.controls"
+                    class="list-group-item"
+                >
+                    <p>
+                        {{ tarefa.value }}
+                    </p>
+                    <span (click)="removeTopic2(topic)" class="bi bi-x"></span>
+                </li>
+            </ol>
+        </div>
     </div>
 </form>

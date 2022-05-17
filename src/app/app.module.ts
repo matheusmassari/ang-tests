@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -18,6 +19,9 @@ import { NgSwitchComponentComponent } from './ng-switch-component/ng-switch-comp
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ArrayFormComponent } from './array-form/array-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostsComponent } from './posts/posts.component';
+
 
 @NgModule({
     declarations: [
@@ -35,12 +39,14 @@ import { ArrayFormComponent } from './array-form/array-form.component';
         ContactFormComponent,
         SignUpFormComponent,
         ArrayFormComponent,
+        PostsComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpClientModule,
     ],
     providers: [CoursesService],
     bootstrap: [AppComponent],
