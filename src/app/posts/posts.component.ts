@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
     selector: 'app-posts',
@@ -9,14 +9,53 @@ import { Component, OnInit } from '@angular/core';
 export class PostsComponent implements OnInit {
     posts: any = [];
 
-    constructor(private http: HttpClient) {
-        http.get('http://localhost:3000/posts').subscribe({
-            next: (res) => (this.posts = res),
-            error: () => console.log('algo deu errado!'),
+    constructor(private api: ApiService) {}
+
+    ngOnInit(): void {
+        this.getAllPosts();
+    }
+
+    getAllPosts() {
+        this.api.getProduct().subscribe({
+            next: (res) => {
+                this.posts = res;
+            },
+            error: () => alert('Erro ao buscar lista de posts'),
         });
     }
 
-    ngOnInit(): void {
-        
+    createPost(input: HTMLInputElement) {
+        const post = { title: input.value };
+        this.api.postProduct(post).subscribe({
+            next: (res) => {
+                input.value = '';
+                this.getAllPosts();
+            },
+            error: () => {
+                console.log('algo deu errado');
+            },
+        });
+    }
+
+    deletePost(id: number) {
+        this.api.deleteProduct(id).subscribe({
+            next: (res) => {
+                this.getAllPosts();
+            },
+            error: () => {
+                alert('Houve algum erro ao deletar o produto!');
+            },
+        });
+    }
+
+    updatePost(data: any, id: number) {
+        this.api.putProduct(data, id).subscribe({
+            next: (res) => {
+                this.getAllPosts();
+            },
+            error: () => {
+                alert('Erro ao atualizar (update post)');
+            },
+        });
     }
 }
