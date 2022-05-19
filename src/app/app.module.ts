@@ -2,14 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
-
-
+import { TitleCasePipe } from './title-case.pipe';
 import { AppRoutingModule } from './app-routing.module';
+
+//Services
+import { CoursesService } from './courses/courses.service';
+import { ApiService } from './services/api.service';
+import { DataService } from './services/data.service';
+
+//Componentes
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesComponent } from './courses/courses.component';
-import { CoursesService } from './courses/courses.service';
-import { TitleCasePipe } from './title-case.pipe';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { TitleCaseInputComponent } from './title-case-input/title-case-input.component';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
@@ -19,9 +23,9 @@ import { NgSwitchComponentComponent } from './ng-switch-component/ng-switch-comp
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ArrayFormComponent } from './array-form/array-form.component';
-import { HttpClientModule } from '@angular/common/http';
 import { PostsComponent } from './posts/posts.component';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [

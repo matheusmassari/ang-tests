@@ -16,7 +16,7 @@ export class PostsComponent implements OnInit {
     }
 
     getAllPosts() {
-        this.api.getProduct().subscribe({
+        this.api.getAll().subscribe({
             next: (res) => {
                 this.posts = res;
             },
@@ -26,7 +26,7 @@ export class PostsComponent implements OnInit {
 
     createPost(input: HTMLInputElement) {
         const post = { title: input.value };
-        this.api.postProduct(post).subscribe({
+        this.api.create(post).subscribe({
             next: (res) => {
                 input.value = '';
                 this.getAllPosts();
@@ -38,7 +38,7 @@ export class PostsComponent implements OnInit {
     }
 
     deletePost(id: number) {
-        this.api.deleteProduct(id).subscribe({
+        this.api.delete(id).subscribe({
             next: (res) => {
                 this.getAllPosts();
             },
@@ -49,7 +49,7 @@ export class PostsComponent implements OnInit {
     }
 
     updatePost(data: any, id: number) {
-        this.api.putProduct(data, id).subscribe({
+        this.api.update(data, id).subscribe({
             next: (res) => {
                 this.getAllPosts();
             },
